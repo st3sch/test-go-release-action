@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+test-go-release-action
 
 # Test binary, built with `go test -c`
 *.test
