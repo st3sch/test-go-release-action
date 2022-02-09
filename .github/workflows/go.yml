@@ -17,9 +17,15 @@ jobs:
     - name: Test
       run: go test -v ./...
 
-    - name: Build
+    - name: Build Linux
       run:  go build -v ./...
-            
+
+    - name: Build Windows
+      run:  go build -v ./...
+      env:
+        GOOS: windows
+        GOARCH: amd64
+
     - name: Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
